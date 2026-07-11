@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+</head>
+
+<body>
+
+    <!-- POST method sends data in the request body -->
+    <!-- action = URL where form data is submitted -->
+    <!-- autocomplete="off" disables browser autofill -->
+    <form method="post" action="" autocomplete="off">
+
+        <table border="1" width="800px" align="center" bgcolor="silver">
+
+            <thead>
+                <tr>
+                    <!-- Spans 2 table columns -->
+                    <th colspan="2">User Registration</th>
+                </tr>
+            </thead>
+
+            <tbody align="center">
+
+                <tr>
+                    <td>Username</td>
+                    <td>
+                        <!-- Minimum 2 characters -->
+                        <!-- Field is mandatory -->
+                        <input type="text" name="unm" minlength="2" required>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Password</td>
+                    <td>
+                        <!-- Field is mandatory -->
+                        <input type="password" name="pwd" required>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Email</td>
+                    <td>
+                        <!-- Validates email format -->
+                        <input type="email" name="email" required>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>DOB</td>
+                    <td>
+                        <!-- Restricts selectable dates -->
+                        <input type="date" min="2000-01-01" max="2027-07-01" name="dob">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Date and Time</td>
+                    <td>
+                        <!-- Selects both date and time -->
+                        <input type="datetime-local" name="dnt">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Gender</td>
+                    <td>
+                        <!-- Same name = only one option can be selected -->
+                        <!-- id connects with label -->
+                        <input type="radio" name="gender" id="m">
+                        <label for="m">Male</label>
+
+                        <input type="radio" name="gender" id="f">
+                        <label for="f">Female</label>
+
+                        <input type="radio" name="gender" id="o">
+                        <label for="o">Other</label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Hobbies</td>
+                    <td>
+                        <!-- Multiple checkboxes can be selected -->
+                        <input type="checkbox" name="chk" id="chk">
+                        <label for="chk">Reading</label>
+
+                        <input type="checkbox" name="chk1" id="chk1">
+                        <label for="chk1">Travelling</label>
+
+                        <input type="checkbox" name="chk2" id="chk2">
+                        <label for="chk2">Singing</label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Qualification</td>
+                    <td>
+                        <!-- Dropdown list -->
+                        <select name="qual">
+                            <!-- Dropdown options -->
+                            <option>Select</option>
+                            <option>BTech</option>
+                            <option>MCA</option>
+                            <option>BBA</option>
+                            <option>BCA</option>
+                            <option>MBA</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>University Name</td>
+                    <td>
+                        <!-- Connects textbox with datalist -->
+                        <input type="text" name="uni" list="mylist">
+
+                        <!-- Provides typing suggestions -->
+                        <datalist id="mylist">
+                            <option>DU</option>
+                            <option>JNU</option>
+                            <option>CSJMU</option>
+                            <option>BIT</option>
+                            <option>VIT</option>
+                            <option>AKTU</option>
+                            <option>IIT</option>
+                            <option>NIT</option>
+                        </datalist>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Upload Photograph</td>
+                    <td>
+                        <!-- Restricts file types -->
+                        <!-- Allows multiple file selection -->
+                        <input type="file" accept=".png,.jpg" name="pic" multiple>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Range</td>
+                    <td>
+                        <!-- Slider range -->
+                        <input type="range" min="100" max="1000" name="range">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Select your Favorite Color</td>
+                    <td>
+                        <!-- Opens color picker -->
+                        <input type="color" id="favc" name="favc">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Hidden Field</td>
+                    <td>
+                        <!-- Hidden value sent with the form -->
+                        <input type="hidden" id="urn" name="urn" value="0023">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Number of Attempts</td>
+                    <td>
+                        <!-- Accepts numbers only -->
+                        <!-- Restricts allowed values -->
+                        <input type="number" id="attempts" name="attempts" min="0" max="6">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Mobile Number</td>
+                    <td>
+                        <!-- Validates 10-digit number -->
+                        <!-- Maximum 10 characters -->
+                        <input type="tel"
+                               id="phone"
+                               name="phone"
+                               pattern="[0-9]{10}"
+                               maxlength="10"
+                               required>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>GitHub</td>
+                    <td>
+                        <!-- Validates website URL -->
+                        <input type="url" id="gh" name="github">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2">
+
+                        <!-- Submits the form -->
+                        <input type="submit" value="Submit">
+
+                        <!-- Clears all fields -->
+                        <input type="reset" value="Reset">
+
+                        <!-- Normal button (needs JavaScript) -->
+                        <input type="button" value="Click Me">
+
+                        <!-- Image used as submit button -->
+                        <input type="image" src="../Images/shizuka.jpeg" width="40px">
+
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </form>
+
+</body>
+
+</html>

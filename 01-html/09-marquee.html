@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<>, initial-scale=1.0">
+    <title>Marquee</title>
+</head>
+<body>
+    <!-- Marquee is a HTML element that creates a scrolling text effect -->
+    <!-- scrollamount attribute controls the speed of the scrolling text. A higher value means faster scrolling -->
+    <!-- direction attribute controls the direction of the scrolling text. right to left is the default -->
+    <!-- height attribute controls the height of the marquee. You can set it to any value you want -->
+    <!-- behavior attribute controls the behavior of the scrolling text. alternate makes the text bounce back and forth -->
+    <!-- onmouseover attribute stops the scrolling text when the mouse is over it -->
+    <!-- onmouseout attribute starts the scrolling text when the mouse is out of it -->
+    <marquee 
+        behavior="alternate"
+        scrollamount="50"
+        direction="right"
+        height="800px"
+        onmouseover="stop()"
+        onmouseout="start()" >
+        <h1>
+            <span>Nobita</span>
+            <span>Shizuka</span>
+            <span>Doraemon</span>
+            <span>Gian</span>
+            <span>Suneo</span>
+            <span>Dekisugi</span>
+            <span>Hidetoshi</span>
+            <span>Tamako</span>
+        </h1>
+        <img src="../Images/nobita.jpeg" width="200px" />
+    </marquee>
+</body>
+</html>

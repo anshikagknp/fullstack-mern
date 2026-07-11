@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using iFrame</title>
+</head>
+<body>
+    <table border="0px" width="1200px" align="center">
+        <thead>
+            <tr>
+                <!-- colspan is used to specify the number of columns a cell should span -->
+                <th colspan="4">
+                    <img src="../Images/header.jpg"
+                    width="100%"
+                    height="200px" />
+                </th>
+            </tr>
+            <!-- Navigation Links -->
+            <!-- target is used to specify which frame to display the linked document -->
+            <tr>
+                <th colspan="1">
+                    <a href="04-tables.html" target="myframe">View Tables</a> |
+                </th>
+                <th colspan="1">
+                    <a href="12-forms.html" target="myframe">View Form</a> |
+                </th>
+                <th colspan="1">
+                    <a href="00-basic-structure.html" target="myframe">View Notes</a> |
+                </th>
+                <th colspan="1">
+                    <a href="03-fieldset.html" target="myframe">View Fieldset</a> |
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <!-- iFrame is used to embed another HTML document within the current document -->
+                <!-- name attribute is used to specify the name of the iframe, which can be used as a target for links -->
+                <td colspan="4">
+                    <iframe
+                    name="myframe"
+                    width="100%"
+                    height="1000px"
+                    src="https://www.wikipedia.org/wiki/doraemon"></iframe>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="4">
+                    <img src="../Images/footer.jpg" width="100%" height="330px" />
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>
