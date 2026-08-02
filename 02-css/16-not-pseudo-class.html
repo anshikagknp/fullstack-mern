@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- :not() excludes the submit button from these rules -->
+    <style>
+        input:not(#subBtn)
+        {
+            border: 1px solid navy;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+        input:focus:not(#subBtn)
+        {
+            background-color: antiquewhite;
+            outline: 1px solid navy;
+            box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <form method="post">
+        <input type="text" placeholder="Enter name" id="nm"><br>
+        <input type="email" placeholder="Enter email" id="mail"><br>
+        <input type="password" placeholder="Enter password" id="pwd"><br>
+        <input type="submit" id="subBtn" />
+    </form>
+
+</body>
+</html>

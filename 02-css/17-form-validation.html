@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- :user-valid and :user-invalid check a field only after the user has interacted with it -->
+    <style>
+        input
+        {
+            border: 1px solid navy;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+        input:user-valid
+        {
+            border: 2px solid green;
+        }
+        input:user-invalid
+        {
+            border: 2px solid red;
+        }
+    </style>
+</head>
+<body>
+    <form method="post">
+        <input type="text" placeholder="Enter Name" id="nm" required minlength="4"><br>
+        <input type="email" placeholder="Enter Email" id="mail" required minlength="6"><br>
+        <input type="password" placeholder="Enter Password" id="pwd" required minlength="6"><br>
+        <input type="submit" id="subBtn" />
+    </form>
+
+</body>
+</html>

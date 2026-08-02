@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- pseudo-elements: ::before, ::after, ::marker, ::selection -->
+    <style>
+        #mypara::before
+        {
+            content: "Hi... ";
+        }
+        #mypara::after
+        {
+            content: " 😊";
+        }
+        ::marker
+        {
+            content: "✔️ ";
+        }
+        ::selection
+        {
+            background-color: navy;
+            color: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+    <p id="mypara">
+        Hello World!
+    </p>
+
+    <!-- ul>li{ListItem$}*5 -->
+    <ul>
+        <li>ListItem1</li>
+        <li>ListItem2</li>
+        <li>ListItem3</li>
+        <li>ListItem4</li>
+        <li>ListItem5</li>
+    </ul>
+
+</body>
+</html>

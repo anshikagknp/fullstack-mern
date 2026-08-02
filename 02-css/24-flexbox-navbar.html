@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        nav{
+            display: flex;
+            background-color: white;
+            height: 100px;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        nav>img {
+            height: 50px;
+            width: 220px;
+            margin-left: 40px;
+            float: left;
+            margin-right: 20px;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 20px;
+        }
+        nav>ul{
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: row;
+        }
+        nav>ul a{
+            text-decoration: none;
+            display: block;
+            font-size: 20px;
+            text-align: center;
+            color: rgb(136, 130, 130);
+            padding: 10px;
+            margin-top: 20px;
+            margin-right: 50px;
+        }
+        nav>ul a:hover{
+            color: rgb(245, 64, 64);
+        }
+        @media all and (min-width: 769px) and (max-width: 1024px){
+            nav{
+                flex-direction: row;
+                height: 100px;
+                justify-content: center;
+            }
+            nav>ul{
+                flex-direction: row;
+            }
+        }
+        @media all and (max-width: 768px){
+            nav{
+                flex-direction: column;
+                height: 200px;
+            }
+            nav>ul{
+                flex-direction: column;
+            }
+            nav>img{
+                display: none;
+            }
+            nav>ul a{
+                font-size: 15px;
+                border-bottom: 2px solid white;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    
+    <nav>
+        <img src="../images/dllogo.png" />
+        <!-- ul>(li>a{link $})*5 -->
+        <ul>
+            <li><a href="">Explore courses</a></li>
+            <li><a href="">AI Newsletter</a></li>
+            <li><a href="">Community</a></li>
+            <li><a href="">Membership</a></li>
+            <li><a href="">Profile</a></li>
+        </ul>
+    </nav>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 4px;
+        }
+        .container>* {
+            border: 1px solid black;
+            text-align: center;
+            font-size: x-large;
+            flex-grow: 1;
+            flex-shrink: 1;
+            flex-basis: 100%;
+        }
+
+        .myHeader
+        {
+            line-height: 120px;
+            color: white;
+            background-color: navy;
+        }
+
+        .aside1, .aside2 {
+            line-height: 200px;
+            background-color: burlywood;
+
+        }
+        .main
+        {
+            line-height: 600px;
+            background-color: cadetblue;
+
+        }
+        .myFooter{
+            line-height: 100px;
+            background-color: grey;
+            color: black;
+        }
+
+        @media all and (min-width: 992px) {
+            body{
+                background-color: rgb(214, 210, 210);
+            }
+            .myHeader{
+                order: 1;
+            }
+            .aside1{
+                order:2;
+                flex-grow: 1;
+                flex-shrink: 1;
+                flex-basis: 0%;
+            }
+            .main{
+                order: 3;
+                flex-grow: 3;
+                flex-shrink: 3;
+                flex-basis: 0%;
+            }
+            .aside2{
+                order: 4;
+                flex-grow: 1;
+                flex-shrink: 1;
+                flex-basis: 0%;
+            }
+            .myFooter{
+                order: 5;
+            }
+        }
+        @media all and (min-width: 768px) and (max-width: 991px){
+            .myHeader{
+                order: 1;
+            }
+            .main{
+                order: 2;
+            }
+            .aside1{
+                order: 3;
+                flex-basis: 0%;
+            }
+            .aside2{
+                order: 4;
+                flex-basis: 0%;
+            }
+            .myFooter{
+                order: 5;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <header class="myHeader">
+        My header
+    </header>
+    <aside class="aside1">
+        aside left
+    </aside>
+    <aside class="aside2">
+        aside right
+    </aside>
+    <main class="main">
+        main content
+    </main>
+    <footer class="myFooter">
+        my footer
+    </footer>
+    </div>
+</body>
+</html>

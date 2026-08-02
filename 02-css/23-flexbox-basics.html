@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Demo</title>
+    <style>
+        .container {
+            border: 2px solid black;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            /*align-items: center;*/
+            align-content: center;
+            border-radius: 20px;
+            gap: 10px;
+        }
+        .container>div:nth-child(odd) {
+            background-color: aqua;
+        }
+        .container>div:nth-child(even) {
+            background-color: yellow;
+        }
+        .container>div {
+            border: 2px solid black;
+            height: 350px;
+            width: 250px;
+            margin: 10px;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- div.container>div#Div${div $}*5 -->
+    <div class="container">
+        <div id="Div1">div 1</div>
+        <div id="Div2">div 2</div>
+        <div id="Div3">div 3</div>
+        <div id="Div4">div 4</div>
+        <div id="Div5">div 5</div>
+        <div id="Div6">div 6</div>
+        <div id="Div7">div 7</div>
+        <div id="Div8">div 8</div>
+        <div id="Div9">div 9</div>
+        <div id="Div10">div 10</div>
+        <div id="Div11">div 11</div>
+        <div id="Div12">div 12</div>
+        <div id="Div13">div 13</div>
+        <div id="Div14">div 14</div>
+        <div id="Div15">div 15</div>
+        <div id="Div16">div 16</div>
+        <div id="Div17">div 17</div>
+        <div id="Div18">div 18</div>
+        <div id="Div19">div 19</div>
+        <div id="Div20">div 20</div>
+    </div>
+</body>
+</html>

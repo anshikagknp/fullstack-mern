@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .inputName
+        {
+            position: relative;
+        }
+        .inputName>label{
+            position: absolute;
+            left: 5px;
+            top: 5px;
+            font-size: 10px;
+            color: grey;
+            transition: 0.2s;
+        }
+        .inputName>input[type="text"]{
+            outline:none;
+        }
+        .inputName>input[type="text"]:focus {
+            outline: 1px solid blue ;
+            border: 0;
+        }
+        .inputName >input[type="text"]:focus + label{
+            top: -3px;
+            font-size: 7px;
+            color: navy;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="inputName">
+        <input type="text" id="nm">
+        <label>
+            Enter name
+        </label>
+    </div>
+</body>
+</html>

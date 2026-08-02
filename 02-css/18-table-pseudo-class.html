@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- structural pseudo-classes: first-child, last-child, nth-child -->
+    <style>
+        table
+        {
+            border: 1px solid navy;
+            border-collapse: collapse;
+        }
+        th, td
+        {
+            border: 2px solid burlywood;
+            padding: 8px;
+        }
+        tr:first-child
+        {
+            background-color: navy;
+            color: white;
+        }
+        tr:last-child
+        {
+            background-color: bisque;
+        }
+        tbody > tr:hover
+        {
+            background-color: rgb(230, 230, 250);
+        }
+        /* nth-child formula: an+b, here every 4th row starting from the 1st */
+        tbody > tr:nth-child(4n+1)
+        {
+            background-color: rgb(214, 210, 210);
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Emp-Id</th>
+                <th>Emp-Name</th>
+                <th>Emp-Email</th>
+                <th>Emp-Mobile</th>
+                <th>Emp-Age</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1001</td>
+                <td>Anshika</td>
+                <td>anshika@mail.com</td>
+                <td>9876543210</td>
+                <td>21</td>
+            </tr>
+            <tr>
+                <td>1002</td>
+                <td>Anshika</td>
+                <td>anshika@mail.com</td>
+                <td>9876543210</td>
+                <td>21</td>
+            </tr>
+            <tr>
+                <td>1003</td>
+                <td>Anshika</td>
+                <td>anshika@mail.com</td>
+                <td>9876543210</td>
+                <td>21</td>
+            </tr>
+            <tr>
+                <td>1004</td>
+                <td>Anshika</td>
+                <td>anshika@mail.com</td>
+                <td>9876543210</td>
+                <td>21</td>
+            </tr>
+            <tr>
+                <td>1005</td>
+                <td>Anshika</td>
+                <td>anshika@mail.com</td>
+                <td>9876543210</td>
+                <td>21</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="5">&reg; My Company</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>

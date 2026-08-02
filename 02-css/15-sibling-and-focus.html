@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- adjacent sibling combinator (+) targets the element right after -->
+    <style>
+        #title
+        {
+            display: none;
+        }
+        #icon:hover + #title
+        {
+            display: block;
+            color: navy;
+        }
+        input:focus
+        {
+            background-color: antiquewhite;
+            color: navy;
+            outline: 1px solid navy;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <span id="icon">🏠</span>
+        <span id="title">Home</span>
+    </div>
+
+    <!-- :focus pseudo-class -->
+    <input type="text" placeholder="Click here to focus" />
+
+</body>
+</html>
