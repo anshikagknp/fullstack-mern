@@ -123,32 +123,6 @@ A collection of lecture demos, notes, and practice exercises from a Fullstack ME
 - [03-employees.js](assignments/03-employees.js)
 - [04-jspractice.js](assignments/04-jspractice.js)
 
-### [`images`](images) — Assets
-
-- [Mouse.jpg](images/Mouse.jpg)
-- [Shinchan.jpg](images/Shinchan.jpg)
-- [background.jpg](images/background.jpg)
-- [bootstrap.png](images/bootstrap.png)
-- [car1.jpeg](images/car1.jpeg)
-- [car2.jpeg](images/car2.jpeg)
-- [car3.jpeg](images/car3.jpeg)
-- [car5.jpeg](images/car5.jpeg)
-- [css.png](images/css.png)
-- [dllogo.png](images/dllogo.png)
-- [doraemon.jpeg](images/doraemon.jpeg)
-- [footer.jpg](images/footer.jpg)
-- [frustrated.jpg](images/frustrated.jpg)
-- [header.jpg](images/header.jpg)
-- [html.png](images/html.png)
-- [javascript.png](images/javascript.png)
-- [nobita.jpeg](images/nobita.jpeg)
-- [sheryianslogo.jpg](images/sheryianslogo.jpg)
-- [shizuka.jpeg](images/shizuka.jpeg)
-
-### [`multimedia`](multimedia) — Assets
-
-- [audio1.mp3](multimedia/audio1.mp3)
-- [video1.mp4](multimedia/video1.mp4)
 
 ## Notes
 
