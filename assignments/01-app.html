@@ -1,0 +1,106 @@
+<!-- Assignment 1 - HTML/CSS/BootStrap CSS - Tech Academy Home Page -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <style>
+        .hero{
+            background-color: rgb(69, 56, 216);
+            color: antiquewhite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: 300px;
+        }
+
+    </style>
+</head>
+<body>
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+            <a class="navbar-brand">Tech Academy</a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Nav1">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="container"></div>
+            <div id="Nav1" class="collapse navbar-collapse">
+                <ul class="navbar-nav" height>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="hero">
+            <div class="container">
+                <h1>Welcome to Tech Academy</h1>
+                <p>Learn HTML, CSS and JavaScript</p>
+                <button class="btn btn-warning">Explore</button>
+            </div>
+        </div>
+
+        <div class="container mt-3" style="padding-right: 0%; padding-left: 0%;">
+            <div class="row justify-content-center mx-4">
+                
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                    <div class="card mt-5" style="max-width: 350px">
+                        <div class="card-content">
+                            <img src="../images/html.png" class="card-img-top">
+                            <div class="card-body">
+                                <h4 class="card-title">HTML<span class="badge bg-success ml-2 align-top" style="font-size: x-small;">New</span></h4>
+                                <p class="card-text">Learn HTML basics.</p>
+                                <button class="btn btn-primary">Read More</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                    <div class="card mt-5" style="max-width: 350px">
+                        <div class="card-content">
+                            <img src="../images/css.png" class="card-img-top">
+                            <div class="card-body">
+                                <h4 class="card-title">CSS</h4>
+                                <p class="card-text">Beautify you webpages.</p>
+                                <button class="btn btn-primary">Read More</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                    <div class="card mt-5" style="max-width: 350px">
+                        <div class="card-content">
+                            <img src="../images/javascript.png" class="card-img-top">
+                            <div class="card-body">
+                                <h4 class="card-title">Javascript</h4>
+                                <p class="card-text">Make your webpages functional.</p>
+                                <button class="btn btn-primary">Read More</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <footer class="footer bg-light py-5 mt-5 border-top" style="height: 200px";>
+            <div class="container text-center">
+                <span class="text-muted">© 2026 Tech Academy</span>
+            </div>
+        </footer>
+        
+    
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+</body>
+</html>
