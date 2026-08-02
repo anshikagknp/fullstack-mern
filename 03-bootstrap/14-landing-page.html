@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+
+        .carousel-item>img{
+            width: 100vw;
+            height: 100vh;
+        }
+        .container>div>div:nth-child(odd)
+        {
+            background-color: white;
+        }
+        .container>div>div:nth-child(even)
+        {
+            background-color: white;
+        }
+    </style>
+
+    
+</head>
+<body>
+    
+    <div class="container-fluid">
+        <!-- Navigation Bar -->
+        <nav class="navbar navbar-expand-md bg-light navbar-light">
+            <!-- ul>(li>a{link $})*5 -->
+            <img src="../images/sheryianslogo.jpg"
+            class="navbar-brand"
+            style="width: 200px;"/>
+
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#myNav" bg-dark>
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div id="myNav" class="collapse navbar-collapse">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="">link 1</a></li>
+                    <li class="nav-item"><a class="nav-link" href="">link 2</a></li>
+                    <li class="nav-item"><a class="nav-link" href="">link 3</a></li>
+                    <li class="nav-item"><a class="nav-link" href="">link 4</a></li>
+                    <li class="nav-item"><a class="nav-link" href="">link 5</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Carousel -->
+        <div class="carousel slide"
+            data-ride="carousel"
+            data-interval="5000"
+            data-pause="off"
+            id="myCarousel">
+
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="../images/car1.jpeg" />
+                    <p class="carousel-caption">Hello World</p>
+                </div>
+                <div class="carousel-item">
+                    <img src="../images/car2.jpeg" />
+                </div>
+                <div class="carousel-item">
+                    <img src="../images/car3.jpeg" />
+                </div>
+                <div class="carousel-item">
+                    <img src="../images/car5.jpeg" />
+                </div>
+                
+            </div>
+
+            <a href="#myCarousel"
+                class="carousel-control-prev"
+                data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+            </a>
+
+            <a href="#myCarousel"
+                class="carousel-control-next"
+                data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+            </a>
+
+            <ul class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to=0></li>
+                <li data-target="#myCarousel" data-slide-to=1></li>
+                <li data-target="#myCarousel" data-slide-to=2></li>
+                <li data-target="#myCarousel" data-slide-to=3></li>
+            </ul>
+
+        </div>
+    </div>
+
+    <div class="container mt-3">
+        <!-- First Row -->
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <p class="alert alert-info">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus provident, voluptatibus tempora esse, culpa reprehenderit atque autem nemo, porro officiis corrupti animi labore. Consequuntur repellat quidem hic, cum recusandae laboriosam debitis reiciendis qui nam, consectetur sed iure quis eius dolorem ea nihil nisi ex! Blanditiis qui labore ratione facilis illo perferendis neque corporis ab, repellat, maxime voluptatum repudiandae quae saepe consectetur ipsa quidem, explicabo debitis possimus natus culpa. Rem impedit voluptas aperiam. Quasi, eos qui.
+                </p>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <div id="myAcc" class="accordion">
+                    <button
+                    data-toggle="collapse"
+                    data-target="#myDiv1"
+                    class="btn btn-danger btn-block mt-4">Open</button>
+                    <div id="myDiv1" class="collapse" data-parent="#myAcc">
+                        <p class="alert alert-danger">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam voluptate laboriosam ipsa error ex ipsam. At laborum nisi, odio voluptatem magni animi voluptatum, impedit fugit magnam placeat repellat, aliquam est necessitatibus. Tempore debitis sit omnis eos eligendi suscipit laboriosam quia. Quos dolorem esse cumque saepe officiis vero quisquam quibusdam vel!
+                        </p>
+                    </div>
+                
+                    <button
+                    data-toggle="collapse"
+                    data-target="#myDiv2"
+                    class="btn btn-info btn-block mt-4">Open</button>
+                    <div id="myDiv2" class="collapse" data-parent="#myAcc">
+                        <p class="alert alert-danger">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam voluptate laboriosam ipsa error ex ipsam. At laborum nisi, odio voluptatem magni animi voluptatum, impedit fugit magnam placeat repellat, aliquam est necessitatibus. Tempore debitis sit omnis eos eligendi suscipit laboriosam quia. Quos dolorem esse cumque saepe officiis vero quisquam quibusdam vel!
+                        </p>
+                    </div>
+                
+                    <button
+                    data-toggle="collapse"
+                    data-target="#myDiv3"
+                    class="btn btn-primary- btn-block mt-4">Open</button>
+                    <div id="myDiv3" class="collapse" data-parent="#myAcc">
+                        <p class="alert alert-danger">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam voluptate laboriosam ipsa error ex ipsam. At laborum nisi, odio voluptatem magni animi voluptatum, impedit fugit magnam placeat repellat, aliquam est necessitatibus. Tempore debitis sit omnis eos eligendi suscipit laboriosam quia. Quos dolorem esse cumque saepe officiis vero quisquam quibusdam vel!
+                        </p>
+                    </div>
+                    </div>
+            </div>
+        </div>
+
+        <!-- Second row -->
+        <div class="row">
+            <!-- First Column -->
+            <div class="col-lg-3 col-md-4 col-sm-6" data-aos="fade-up" data-aos-duration="1000">
+                <div class="card mt-5 mx-auto" style="max-width: 300px;">
+                    <div class="card-content">
+                        <div class="card-header">Header</div>
+                        <img src="../images/car3.jpeg" class="card-img-top" />
+                        <div class="card-body">Body</div>
+                        <div class="card-footer">Footer</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6" data-aos="fade-down" data-aos-duration="1300">
+                <div class="card mt-5 mx-auto" style="max-width: 300px;">
+                    <div class="card-content">
+                        <div class="card-header">Header</div>
+                        <img src="../images/car3.jpeg" class="card-img-top" />
+                        <div class="card-body">Body</div>
+                        <div class="card-footer">Footer</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6" data-aos="fade-up" data-aos-duration="1500">
+                <div class="card mt-5 mx-auto" style="max-width: 300px;">
+                    <div class="card-content">
+                        <div class="card-header">Header</div>
+                        <img src="../images/car3.jpeg" class="card-img-top" />
+                        <div class="card-body">Body</div>
+                        <div class="card-footer">Footer</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6" data-aos="fade-down" data-aos-duration="1700">
+                <div class="card mt-5 mx-auto" style="max-width: 300px;">
+                    <div class="card-content">
+                        <div class="card-header">Header</div>
+                        <img src="../images/car3.jpeg" class="card-img-top" />
+                        <div class="card-body">Body</div>
+                        <div class="card-footer">Footer</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Third row -->
+        <div class="row mt-3">
+            <!-- First Column -->
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <img class="img-thumbnail" src="../images/Shinchan.jpg" style="width: 100%" />
+            </div>
+
+            <!-- Second Column -->
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <img class="img-thumbnail" src="../images/Shinchan.jpg" style="width: 100%" />
+            </div>
+        </div>
+    </div>
+    </div>
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>
