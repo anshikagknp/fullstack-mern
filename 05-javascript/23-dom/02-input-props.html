@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 align="center"> DOM Demo Page</h1>
+    <input type="text" name="unm" id="unm" placeholder="Enter Name">
+    <button onclick = "myfun()">Button</button>
+
+
+    <script>
+        function myfun()
+        {
+            let inpEle = document.getElementById("unm")
+            console.log(inpEle.value);
+            console.log(inpEle.type);
+            console.log(inpEle.placeholder);
+            console.log(inpEle.name);
+            inpEle.disabled=true
+            alert('Your form is submitted! ')
+        }
+    </script>
+</body>
+</html>

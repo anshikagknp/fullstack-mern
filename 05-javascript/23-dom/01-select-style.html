@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 align = "center">DOM Demo Page</h1>
+    <p id = "myP">
+        Hello World
+    </p>
+    
+
+    <script>
+        let p = document.getElementById("myP")
+        console.log(p);
+        //console.log(p.textContent);
+        p.textContent ="Bye World"
+        p.style.backgroundColor = 'navy'
+        p.style.color = 'white'
+        p.style.lineHeight = '100px'
+        p.style.textAlign = 'center'
+        p.style.border = '2px solid skyblue'
+    </script>
+</body>
+</html>
