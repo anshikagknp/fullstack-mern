@@ -119,7 +119,7 @@ console.table(stuA)
 
 // 4. Find the total marks of all students
 let sum = 0
-const total = students.forEach((stu)=> sum=sum+stu.marks)
+students.forEach((stu)=> sum=sum+stu.marks)
 console.log("Total Marks : "+sum)
 
 // 5. Display students whose course contains "CA"
@@ -145,8 +145,14 @@ console.log("The index of the first student with marks > 80 is : ")
 console.log(students.indexOf(bright2))
 
 // 9. Write a program to count the total number of words in a paragraph
+para = "This handout will help you understand how paragraphs are formed, how to develop stronger paragraphs, and how to completely and clearly express your ideas"
+const t_words = para.split(" ");
+console.log("Total number of words : "+t_words.length)
 
 // 10. Replace spaces with hyphens in every name
+const newstr = students.map((stu) => stu.name.replace(" ", "-"))
+console.log("Replaced space with Hyphens in Names : ")
+console.table(newstr)
 
 // 11. Display the names of students whose marks are multiples of 3, sorted in descending order
 let multi3x = students.filter((stu)=> stu.marks%3 == 0 ).sort((a, b) => b.name.localeCompare(a.name))
@@ -158,6 +164,13 @@ let indexMCA = students.find((stu) => stu.course == "MCA")
 console.log("Index of first MCA student : " +students.indexOf(indexMCA))
 
 // 13. Write a program to display the total number of students in each city using reduce()
+// Important
+const stu_city = students.reduce((count,stu)=>{
+    count[stu.city] = (count[stu.city] || 0) + 1
+    return count
+},{})
+console.log("Total number of students in each city : ")
+console.log(stu_city);
 
 // 14. Write a program to display the highest-scoring student using sort() and find()
 students.sort((a,b) => b.marks - a.marks)
@@ -182,7 +195,15 @@ console.log("The students whose city contains the letter a : ")
 console.table(fcity)
 
 // 18. Display only unique cities
-
+// Important
+const unique_city = students.reduce((cities, stu) => {
+    if (!cities.includes(stu.city)) {
+        cities.push(stu.city)
+    }
+    return cities
+}, [])
+console.log("Unique cities : ")
+console.log(unique_city);
 
 // 19. Count the total marks obtained by MCA students
 let sumMCA = 0
