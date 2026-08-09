@@ -17,6 +17,8 @@ A collection of lecture demos, notes, and practice exercises from a Fullstack ME
 | `03-bootstrap` | Bootstrap |
 | `04-mongodb` | MongoDB |
 | `05-javascript` | JavaScript |
+| `05-javascript/23-dom` | DOM Manipulation |
+| `05-javascript/24-async` | Asynchronous JavaScript |
 | `assignments` | Practice |
 | `images` | Assets |
 | `multimedia` | Assets |
@@ -115,6 +117,34 @@ A collection of lecture demos, notes, and practice exercises from a Fullstack ME
 - [18-array-map.js](05-javascript/18-array-map.js)
 - [19-array-find.js](05-javascript/19-array-find.js)
 - [20-array-sort.js](05-javascript/20-array-sort.js)
+- [21-array-reduce.js](05-javascript/21-array-reduce.js)
+- [22-strings.js](05-javascript/22-strings.js)
+
+#### [`23-dom`](05-javascript/23-dom) — DOM Manipulation
+
+- [01-select-style.html](05-javascript/23-dom/01-select-style.html)
+- [02-input-props.html](05-javascript/23-dom/02-input-props.html)
+- [03-toggle-password.html](05-javascript/23-dom/03-toggle-password.html)
+- [04-radio-buttons.html](05-javascript/23-dom/04-radio-buttons.html)
+- [05-checkbox-toggle-all.html](05-javascript/23-dom/05-checkbox-toggle-all.html)
+- [06-tagname-style-paragraphs.html](05-javascript/23-dom/06-tagname-style-paragraphs.html)
+- [07-classname-style-elements.html](05-javascript/23-dom/07-classname-style-elements.html)
+- [08-queryselector-basics.html](05-javascript/23-dom/08-queryselector-basics.html)
+- [09-create-append-button.html](05-javascript/23-dom/09-create-append-button.html)
+- [10-create-table-dynamic.html](05-javascript/23-dom/10-create-table-dynamic.html)
+- [11-table-from-array.html](05-javascript/23-dom/11-table-from-array.html)
+- [12-table-header-click.html](05-javascript/23-dom/12-table-header-click.html)
+- [13-replace-remove-element.html](05-javascript/23-dom/13-replace-remove-element.html)
+- [14-event-bubbling.html](05-javascript/23-dom/14-event-bubbling.html)
+- [15-event-delegation.html](05-javascript/23-dom/15-event-delegation.html)
+
+#### [`24-async`](05-javascript/24-async) — Asynchronous JavaScript
+
+- [01-settimeout-basics.html](05-javascript/24-async/01-settimeout-basics.html)
+- [02-callback-closure.html](05-javascript/24-async/02-callback-closure.html)
+- [03-callback-hell.html](05-javascript/24-async/03-callback-hell.html)
+- [04-promise-basics.html](05-javascript/24-async/04-promise-basics.html)
+- [05-promise-refactor.html](05-javascript/24-async/05-promise-refactor.html)
 
 ### [`assignments`](assignments) — Practice
 
