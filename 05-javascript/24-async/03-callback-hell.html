@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const productDetails = [
+        {proID: 1001 , proName: "iMac" , proPrice: 899},
+        {proID: 1002 , proName: "Macbook" , proPrice: 1199},
+        {proID: 1003 , proName: "iPad" , proPrice: 699},
+        {proID: 1004 , proName: "Earpods" , proPrice: 599},
+        {proID: 1005 , proName: "Charger" , proPrice: 199},
+    ];
+
+    function findProduct(productId, nextTask){
+            console.log("Fetching Product Details, ID :"+productId);
+            let product;
+
+            setTimeout(() => {
+                product = productDetails.find((product) => product.proID === productId);
+                if(product){
+                    console.table(product);
+                    if(nextTask)
+                        nextTask();
+                }    
+                else
+                    console.log("Product not found");
+            }, 3000);
+            return product;
+    }
+    </script>
+</head>
+<body>
+
+    <script>
+        let p;
+        //Callback hell
+        findProduct(1002, () => {
+            findProduct(1003, () => {
+                findProduct(1004)
+            })
+        });
+        
+    </script>
+
+</body>
+</html>

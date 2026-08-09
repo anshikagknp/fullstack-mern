@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+    //  function myfun(milliseconds) {
+          //   let start = new Date().getTime();
+          //   console.log("Process start....");
+          //   while (new Date().getTime() < start + milliseconds);
+          //   console.log("Process end....");
+          // }
+
+        function myfun(callback){
+            console.log("Process Start ...");
+            //callback();
+            setTimeout(callback, 0);
+            console.log("Process End ...");
+        }
+        myfun(() => {
+            console.log(name);
+        });
+        let name = "Sachin";
+    </script>
+</body>
+</html>
