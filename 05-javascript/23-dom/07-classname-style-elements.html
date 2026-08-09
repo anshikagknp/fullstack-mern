@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 align="center"> DOM Demo Page </h1>
+    <p class="cls1">paragraph 1</p>
+    <p class="cls2">paragraph 2</p>
+    <p class="cls2">paragraph 3</p>
+    <h2 class="cls2">Heading 2</h2>
+    <span class="cls1">Span</span>
+
+    <button onclick="myfun()">Button</button>
+
+    <script>
+        function myfun()
+        {
+            let elements = document.getElementsByClassName("cls1")
+            for(let ele of elements){
+                ele.style.backgroundColor = "red";
+                ele.style.color = "white";
+                ele.style.lineHeight = "50px";
+                ele.style.textAlign = "center";
+                ele.style.fontSize = "xx-large";
+            }
+            let elements2 = document.getElementsByClassName("cls2")
+            for(let ele of elements2){
+                ele.style.backgroundColor = "navy";
+                ele.style.color = "white";
+                ele.style.lineHeight = "100px";
+                ele.style.textAlign = "center";
+                ele.style.fontSize = "xx-large";
+            }        
+        }
+    </script>
+</body>
+</html>

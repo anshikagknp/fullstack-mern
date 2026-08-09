@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 align="center"> DOM Demo Page </h1>
+    <input type="checkbox" name="hobbies" value="Singing" />Singing
+    <input type="checkbox" name="hobbies" value="Journaling" />Journaling
+    <input type="checkbox" name="hobbies" value="Coloring" />Coloring
+
+    <button onclick="myfun()">Button</button>
+
+    <script>
+        let isChecked = false;
+        function myfun()
+        {
+            let checkList = document.getElementsByName("hobbies")
+            if(isChecked)
+            {
+                checkList.forEach((checkbox)=>{checkbox.checked = false})
+            }
+            else
+            {
+                checkList.forEach((checkbox)=>{checkbox.checked = true})
+            }
+            isChecked = !isChecked;
+        }
+    </script>
+</body>
+</html>

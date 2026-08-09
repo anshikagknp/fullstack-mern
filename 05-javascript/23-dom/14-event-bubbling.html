@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #parent {
+        background-color: yellow;
+        height: 200px;
+        padding: 50px 100px;
+      }
+      #child {
+        background-color: aqua;
+        height: 100px;
+        padding: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    
+    <div id="parent">
+      Parent DIV
+      <div id="child">
+        CHILD Div
+        <button id="btn">Button</button>
+      </div>
+    </div>
+
+    <script>
+      let p = document.getElementById("parent");
+      p.addEventListener("click", () => {
+        console.log("Parent Clicked");
+      });
+
+      let c = document.getElementById("child");
+      c.addEventListener("click", () => {
+        console.log("Child Clicked");
+      });
+
+      let btn = document.getElementById("btn");
+      btn.addEventListener("click", () => {
+        console.log("Button Clicked");
+      });
+    </script>
+  </body>
+</html>

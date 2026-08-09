@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 align="center"> DOM Demo Page </h1>
+    <p class="cls1">paragraph 1</p>
+    <p>paragraph 2</p>
+    <p id="myP">paragraph 3</p>
+    <h2 class="cls2">Heading 2</h2>
+    <span class="cls1">Span</span>
+    <div>
+        <h1>Heading A</h1>
+        <h1>Heading A</h1>
+        <h1>Heading A</h1>
+        <h1>Heading A</h1>
+        <h1>Heading A</h1>
+    </div>
+
+    <button onclick="myfun()">Button</button>
+
+    <script>
+        function myfun()
+        {
+            let ele1 = document.querySelector(".cls1")
+            let ele2 = document.querySelectorAll(".cls1")
+            let ele3 = document.querySelector("p")
+            let ele4 = document.querySelectorAll("p")
+            let ele5 = document.querySelector("#myP")
+            let ele6 = document.querySelector("h2")
+            let ele7 = document.querySelector("div>h1")
+            let ele8 = document.querySelectorAll("div>h1:nth-child(odd)")
+            console.log(ele1);
+            console.log(ele2);
+            console.log(ele3);
+            console.log(ele4);
+            console.log(ele5);
+            console.log(ele6);
+            console.log(ele7);
+            console.log(ele8);
+                    
+        }
+    </script>
+</body>
+</html>

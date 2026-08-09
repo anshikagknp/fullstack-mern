@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="btn">Button</button>
+
+    <h1 align="center"> DOM Demo Page </h1>
+
+    <ul id="userNames">
+      <li>Sachin</li>
+      <li id="nm2">Virat</li>
+      <li>Rahul</li>
+      <li>Virendra</li>
+    </ul>
+
+    <p>Lorem ipsum dolor sit amet consectetur</p>
+
+  </body>
+  <script>
+    let btn = document.getElementById("btn");
+    btn.addEventListener("click", () => {
+      let ul = document.getElementById("userNames");
+
+      let p = document.createElement("p");
+      p.textContent = "My Paragraph ";
+
+      ul.replaceWith(p);
+
+      // ul.before(p);
+      // ul.after(p);
+      // ul.remove();
+
+      // console.log(ul);
+      // console.log(ul.parentElement);
+      // console.log(ul.children);
+      // console.log(ul.childNodes);
+      // console.log(ul.firstElementChild);
+      // console.log(ul.lastElementChild);
+      // console.log(ul.previousElementSibling);
+      // console.log(ul.nextElementSibling);
+    });
+  </script>
+</html>

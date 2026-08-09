@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 align="center"> DOM Demo Page </h1>
+
+    <button onclick="myfun()">Button</button>
+    <div id="myDiv" style="border: 5px groove; height: 100px">
+
+    </div>
+
+    <script>
+        function myfun()
+        {
+            let btn = document.createElement("button")
+            btn.textContent= "Submit";
+            btn.setAttribute("type", "submit");
+            btn.addEventListener("click",()=>{
+                alert("Your form has been submitted..");
+            });
+            let d = document.getElementById("myDiv");
+            d.append(btn);
+            
+            // let d = document.createElement("div")
+            // d.textContent = "My Division"
+            // d.align = "center"
+            // d.setAttribute("id", "myID")
+            // console.log(d);
+            // document.body.append(d);
+            // document.body.prepend(d);
+        }
+    </script>
+</body>
+</html>
