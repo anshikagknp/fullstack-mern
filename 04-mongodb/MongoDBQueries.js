@@ -3,6 +3,8 @@
 // use AnshikaDB
 // show dbs - not showing - non-existent database (physically)
 
+//================================ TOPIC: CRUD Basics - Insert, Find ================================
+
 // db.createCollection(collection_name)
 db.createCollection("employee")
 
@@ -63,6 +65,8 @@ db.employee.insertMany([{
     }
 ])
 
+//================================ TOPIC: Query Operators and Projections ================================
+
 //Inclusion Projection (Include the fields)
 db.employee.find({},{empName: 1, empAge: 1, _id:0})
 
@@ -121,6 +125,8 @@ db.employee.find({$and: [
     {empSalary: {$exists: true}},
     {empSalary: {$type: 'int'}},
 ]})
+
+//================================ TOPIC: Update and Delete Operations ================================
 
 //updateOne and updateMany
 db.employee.updateOne(
@@ -223,6 +229,8 @@ db.assignment1.insertMany([
     }
 ]);
 
+//================================ TOPIC: Regex Queries ================================
+
 // Find a document using a keyword - case sensitive
 db.assignment1.find({ about: /Fitness trainer/ });
 
@@ -243,6 +251,8 @@ db.assignment1.find({ name: /^.{2}c/ });
 // Ends with - find a name with a particular letter at a particular place
 db.assignment1.find({ name: /s.{2}$/ });
 
+//================================ TOPIC: Pagination - Count, Limit, Skip ================================
+
 // Find the number of records
 db.assignment1.find().count();
 
@@ -253,6 +263,8 @@ db.assignment1.find().limit(2);
 db.assignment1.find().skip(2);
 
 //------------------------------ back to employee collection --------------------------
+
+//================================ TOPIC: Sorting ================================
 
 //sort : 1 for ascending order
 //sort : -1 for descending order
@@ -659,6 +671,8 @@ db.assignment2.updateMany(
 
 //----------------------------- new collection: users ---------------------------------
 
+//================================ TOPIC: Aggregation Pipeline ================================
+
 // aggregate function
 db.users.insertMany([
     {
@@ -855,7 +869,7 @@ db.users.aggregate([
     }
 ])
 
-// Array Operations
+//================================ TOPIC: Array Operations ================================
 //---------------------------- new collection : trainer ------------------------------
 
 db.createCollection("trainer")
