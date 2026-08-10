@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Promise Refactor</title>
+    <title>Nested .then()</title>
     <script>
         const productDetails = [
         {proID: 1001 , proName: "iMac" , proPrice: 899},
@@ -35,24 +35,24 @@
 <body>
 
     <script>
-        let p = findProduct(1001);
-        console.log(p);
-
-        p.then((pro) => {
-            console.log(pro);  
+        findProduct(1001).then((product) => {
+            console.log(product);    //task 1 done
+            findProduct(1002).then((product) => {
+                console.log(product);       //task 2 done
+                findProduct(1003).then((product) => {
+                    console.log(product);     //task 3 done
+                })
+                .catch((error) => {
+                    console.log(error);
+                })
+            })
+            .catch((error) => {
+                console.log(error);
+            })
         })
-        .catch((err) => {
-            console.log(err);    
-        })
-
-        console.log(p)
-        // Callback hell
-        // findProduct(1002, () => {
-        //     findProduct(1003, () => {
-        //         findProduct(1004)
-        //     })
-        // });
-        
+        .catch((error) => {
+            console.log(error);    
+        });
     </script>
 
 </body>

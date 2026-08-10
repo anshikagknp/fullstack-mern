@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Callback Hell</title>
+    <title>Promise Chaining</title>
     <script>
         const productDetails = [
         {proID: 1001 , proName: "iMac" , proPrice: 899},
@@ -15,33 +15,41 @@
 
     function findProduct(productId, nextTask){
             console.log("Fetching Product Details, ID :"+productId);
-            let product;
-
-            setTimeout(() => {
+            
+            let promise = new Promise((resolve, rejected) => {
+                let product;
+                setTimeout(() => {
                 product = productDetails.find((product) => product.proID === productId);
                 if(product){
-                    console.table(product);
-                    if(nextTask)
-                        nextTask();
+                    resolve(product);
+                    if(nextTask) nextTask();
                 }    
                 else
-                    console.log("Product not found");
+                    rejected("Product not found");
             }, 3000);
-            return product;
+            })
+            return promise;
     }
     </script>
 </head>
 <body>
 
     <script>
-        let p;
-        //Callback hell
-        findProduct(1002, () => {
-            findProduct(1003, () => {
-                findProduct(1004)
-            })
-        });
-        
+        findProduct(1001)
+        .then((product) => {
+            console.log(product);
+            return findProduct(1002);
+        })
+        .then((product) => {
+            console.log(product);
+            return findProduct(1003);
+        })
+        .then((product) => {
+            console.log(product);
+        })
+        .catch((error) => {
+            console.log(error);
+        })
     </script>
 
 </body>
