@@ -11,9 +11,7 @@ function Comp3(){
         a.push(<li>{ele}</li>)
     });
 
-
     return (
-        
         //fragment
         <>
         <h1 align='center'>Component3</h1>
@@ -24,8 +22,7 @@ function Comp3(){
             {arr[0]}
             {userData.uid}
             <ul>{a}</ul>
-        </p>
-        
+        </p>        
         </>    
     );
 }
