@@ -9,6 +9,10 @@ import Comp8 from './08-ProductTable'
 import Comp9 from './09-ChildrenProps'
 import Comp10 from './10-ProductCards'
 import Comp11 from './11-RoutingDemo'
+import ShowDetails from './12-ShowDetails'
+import UseStateCounter from './13-UseStateCounter'
+import ProductLoader from './14-ProductLoader'
+import FormHandling from './15-FormHandling'
 // import './App.css'
 
 function App() {
@@ -16,7 +20,11 @@ function App() {
 
   return (
     <>
-      <Comp11/>
+      <FormHandling/>
+      {/* <ProductLoader/> */}
+      {/* <UseStateCounter/> */}
+      {/* <ShowDetails/> */}
+      {/* <Comp11/> */}
       {/* <Comp10/> */}
       {/* <Comp9/> */}
       {/* <Comp8/> */}

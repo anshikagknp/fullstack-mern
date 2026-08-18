@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 function MyCard({product}){
     return(
         <>
@@ -5,6 +6,7 @@ function MyCard({product}){
             <div className="card-header">
                 {product.proName}
             </div>
+            <img src={"./github.jpg"} />
             <div className="card-body">
                 <p className="alert alert-info">
                     Product ID: {product.proID} <br/>
@@ -13,14 +15,12 @@ function MyCard({product}){
                 </p>
             </div>
             <div className="card-footer">
-                <button className="btn btn-danger btn-block">Add to Cart</button>
+                <Link to={`/details/${product.proID}`} className="btn btn-danger btn-block">View Details</Link>
             </div>
         </div>
         </>
-    )
+    );
 }
-
-
 
 function Comp10(){
     const productDetails = [
@@ -42,12 +42,9 @@ function Comp10(){
                     <div className = "col-lg-3 col-md-4 col-sm-6">
                         <MyCard product={product}/>
                     </div>
-
                 ))}
-            
             </div>
-            }
-                
+            }   
         </div>
         </> 
     );
