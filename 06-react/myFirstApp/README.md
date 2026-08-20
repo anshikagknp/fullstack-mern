@@ -1,16 +1,52 @@
-# React + Vite
+# myFirstApp — React Learning Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A collection of small React demos, each covering one concept, built while learning React with Vite.
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- React 19
+- React Router DOM
+- Vite
 
-## React Compiler
+## Getting Started
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm install
+npm run dev
+```
 
-## Expanding the ESLint configuration
+Open the local URL shown in the terminal (usually `http://localhost:5173`).
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## How It's Organized
+
+Each topic lives in its own numbered file inside `src/`. Only one component is active at a time in `App.jsx` — uncomment the one you want to try and comment out the rest.
+
+| File | Topic |
+|---|---|
+| `01-BasicHeading.jsx` | Basic JSX / component |
+| `02-FragmentDemo.jsx` | Fragments |
+| `03-JsxExpressions.jsx` | JSX expressions |
+| `04-InlineStyling.jsx` | Inline styling |
+| `05-EventHandling.jsx` | Event handling |
+| `06-ConditionalRendering.jsx` | Conditional rendering |
+| `07-ListAndTernary.jsx` | Lists & ternary operators |
+| `08-ProductTable.jsx` | Rendering a table from data |
+| `09-ChildrenProps.jsx` | `children` prop |
+| `10-ProductCards.jsx` | Reusable card components |
+| `11-RoutingDemo.jsx` | React Router basics |
+| `12-ShowDetails.jsx` | Route params |
+| `13-UseStateCounter.jsx` | `useState` |
+| `14-ProductLoader.jsx` | Fetching data |
+| `15-FormHandling.jsx` | Form handling |
+| `16-UseEffectDemo.jsx` | `useEffect` |
+| `17-PropsDrilling.jsx` | Props drilling |
+| `18-ContextDemo.jsx` | Context API |
+
+`Contexts/AppContext.jsx` holds a shared context provider used across the app.
+
+## Available Scripts
+
+- `npm run dev` — start the dev server
+- `npm run build` — build for production
+- `npm run lint` — run ESLint
+- `npm run preview` — preview the production build locally
