@@ -13,6 +13,9 @@ import ShowDetails from './12-ShowDetails'
 import UseStateCounter from './13-UseStateCounter'
 import ProductLoader from './14-ProductLoader'
 import FormHandling from './15-FormHandling'
+import Comp16 from './16-UseEffectDemo.jsx'
+import Comp17 from './17-PropsDrilling.jsx'
+import Comp18 from './18-ContextDemo.jsx'
 // import './App.css'
 
 function App() {
@@ -20,7 +23,10 @@ function App() {
 
   return (
     <>
-      <FormHandling/>
+      {/* <Comp18/> */}
+      {/* <Comp17/> */}
+      {/* <Comp16/> */}
+      {/* <FormHandling/> */}
       {/* <ProductLoader/> */}
       {/* <UseStateCounter/> */}
       {/* <ShowDetails/> */}
@@ -32,9 +38,9 @@ function App() {
       {/* <Comp6/> */}
       {/* <Comp4/> */}
       {/* <Comp5/> */}
-      {/* <Comp1/>
-      <Comp2/>
-      <Comp3/> */}
+      <Comp1/>
+      {/* <Comp2/> */}
+      {/* <Comp3/> */}
     </>
   )
 }

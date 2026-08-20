@@ -7,6 +7,7 @@ function ChildComponent({name, age, children})    //OR props
         <h1 align="center">Child Component</h1>
         {/* {props.name}; */}
         {name}
+        {age}
         {children}
         </>
     );

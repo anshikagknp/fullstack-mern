@@ -1,7 +1,7 @@
 import {Routes, Route, Link} from 'react-router-dom'
 import Comp1 from './01-BasicHeading';
 import Comp2 from './02-FragmentDemo';
-import ShowDetails from './12-Demo12';
+import ShowDetails from './12-ShowDetails';
 import Comp10 from './10-ProductCards';
 //npm install react-router-dom
 function Comp11(){
