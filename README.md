@@ -5,6 +5,8 @@
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
+![React](https://img.shields.io/badge/React-1542B6?style=for-the-badge&logo=react&logoColor=white)
+![Express](https://img.shields.io/badge/Express-E32F26?style=for-the-badge&logo=express&logoColor=white)
 
 A collection of lecture demos, notes, and practice exercises from a Fullstack MERN course. Each folder is numbered in the order the topics should be studied, moving from core web fundamentals toward the MERN stack.
 
@@ -19,6 +21,8 @@ A collection of lecture demos, notes, and practice exercises from a Fullstack ME
 | `05-javascript` | JavaScript |
 | `05-javascript/23-dom` | DOM Manipulation |
 | `05-javascript/24-async` | Asynchronous JavaScript |
+| `06-react` | React (Vite) |
+| `07-express` | Express.js |
 | `assignments` | Practice |
 | `images` | Assets |
 | `multimedia` | Assets |
@@ -146,13 +150,48 @@ A collection of lecture demos, notes, and practice exercises from a Fullstack ME
 - [04-promise-basics.html](05-javascript/24-async/04-promise-basics.html)
 - [05-promise-refactor.html](05-javascript/24-async/05-promise-refactor.html)
 
+### [`06-react`](06-react/myFirstApp) — React (Vite)
+
+A single Vite app (`myFirstApp`) with one topic per file in `src/`. Only one component is rendered at a time from `App.jsx` — comment/uncomment to switch between demos. See the [app's own README](06-react/myFirstApp/README.md) for full setup instructions.
+
+- [01-BasicHeading.jsx](06-react/myFirstApp/src/01-BasicHeading.jsx)
+- [02-FragmentDemo.jsx](06-react/myFirstApp/src/02-FragmentDemo.jsx)
+- [03-JsxExpressions.jsx](06-react/myFirstApp/src/03-JsxExpressions.jsx)
+- [04-InlineStyling.jsx](06-react/myFirstApp/src/04-InlineStyling.jsx)
+- [05-EventHandling.jsx](06-react/myFirstApp/src/05-EventHandling.jsx)
+- [06-ConditionalRendering.jsx](06-react/myFirstApp/src/06-ConditionalRendering.jsx)
+- [07-ListAndTernary.jsx](06-react/myFirstApp/src/07-ListAndTernary.jsx)
+- [08-ProductTable.jsx](06-react/myFirstApp/src/08-ProductTable.jsx)
+- [09-ChildrenProps.jsx](06-react/myFirstApp/src/09-ChildrenProps.jsx)
+- [10-ProductCards.jsx](06-react/myFirstApp/src/10-ProductCards.jsx)
+- [11-RoutingDemo.jsx](06-react/myFirstApp/src/11-RoutingDemo.jsx)
+- [12-ShowDetails.jsx](06-react/myFirstApp/src/12-ShowDetails.jsx)
+- [13-UseStateCounter.jsx](06-react/myFirstApp/src/13-UseStateCounter.jsx)
+- [14-ProductLoader.jsx](06-react/myFirstApp/src/14-ProductLoader.jsx)
+- [15-FormHandling.jsx](06-react/myFirstApp/src/15-FormHandling.jsx)
+- [16-UseEffectDemo.jsx](06-react/myFirstApp/src/16-UseEffectDemo.jsx)
+- [17-PropsDrilling.jsx](06-react/myFirstApp/src/17-PropsDrilling.jsx)
+- [18-ContextDemo.jsx](06-react/myFirstApp/src/18-ContextDemo.jsx)
+- [Contexts/AppContext.jsx](06-react/myFirstApp/src/Contexts/AppContext.jsx)
+
+### [`07-express`](07-express) — Express.js
+
+A small Express server demonstrating routing, controllers, and JSON responses.
+
+- [index.js](07-express/index.js) — Server entry point; mounts routes and defines a few standalone handlers
+- [routes/adminRoutes.js](07-express/routes/adminRoutes.js) — Admin route definitions (`/admin/...`)
+- [routes/userRoutes.js](07-express/routes/userRoutes.js) — User route definitions (`/user/...`)
+- [controllers/adminControllers.js](07-express/controllers/adminControllers.js) — Admin route handler logic
+- [controllers/userControllers.js](07-express/controllers/userControllers.js) — User route handler logic
+- `.env` — Local environment config (`HOST`, `PORT`, `MONGO_URI`, `MONGO_UID`) — not committed to git
+- `Demo1.js` — Scratch file for testing `process.env` values — not committed to git
+
 ### [`assignments`](assignments) — Practice
 
 - [01-app.html](assignments/01-app.html)
 - [02-students.js](assignments/02-students.js)
 - [03-employees.js](assignments/03-employees.js)
 - [04-jspractice.js](assignments/04-jspractice.js)
-
 
 ## Notes
 
@@ -164,4 +203,8 @@ A collection of lecture demos, notes, and practice exercises from a Fullstack ME
 ## Getting Started
 
 Clone the repository and open any `.html` file directly in your browser, or open the folder in an editor to browse through the notes topic by topic.
+ 
+ 
+
+
 
