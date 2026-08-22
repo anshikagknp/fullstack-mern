@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { adminDefault, adminHome, adminAbout, adminGetUser } = require("../controllers/adminControllers");
+const { adminDefault, adminHome, adminAbout, adminGetUser, adminAddUser } = require("../controllers/adminControllers");
 
 // http://localhost:8000/admin/
 router.get("/", adminDefault);
@@ -11,5 +11,8 @@ router.get("/home", adminHome);
 router.get("/about", adminAbout);
 
 router.get("/user", adminGetUser);
+
+// http://localhost:8000/admin/add
+router.post("/add", adminAddUser);
 
 module.exports = router;
