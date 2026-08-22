@@ -1,6 +1,9 @@
 require("dotenv").config();
 const express = require('express');     // to import a module
+const db = require('./db_conn');    // database connectivity import
 const app = express()   // calling of an express function returns an app
+
+app.use(express.json())
 
 const HOST = process.env.HOST;
 const PORT = process.env.PORT || 8000;
