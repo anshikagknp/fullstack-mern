@@ -26,15 +26,19 @@ const UserModel = require("../models/userModel");
 const adminAddUser = async (req, res)=>{
 
     console.log(req.body);
-    
-    let newUser = new UserModel({
-        userName: 'Virat',
-        userPwd: 'Hp@123',
-        userEmail: 'virat@gmail.com'
-    })
-    // newUser = await newUser.save();
-    // console.log(newUser);
-    res.status(200).json(newUser);
+    try{
+        let newUser = new UserModel({
+            userName: req.body.unm,
+            userPwd: req.body.pwd,
+            userEmail: req.body.emailId
+        });
+        newUser = await newUser.save();
+        // console.log(newUser);
+        res.status(200).json(newUser);
+        }
+    catch(err){
+        next(err);
+    }
 };
 
 module.exports = {adminDefault, adminHome, adminAbout, adminGetUser, adminAddUser}
