@@ -71,13 +71,5 @@ app.listen(PORT, HOST, (error)=>{
 })      
 
 // ------------ Error Handling Middleware (used at last)---------------
-const errorHandler = (err, req, res, next) => {
-    console.log("Error Handling Middleware.......");
-    res.status(500).json({
-        success: false,
-        message: err.message,
-        // err : err.stack
-        err : err,
-    });
-};
+const errorHandler = require("./middlewares/errorMiddleware");
 app.use(errorHandler);
