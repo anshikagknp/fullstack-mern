@@ -29,6 +29,14 @@ const MESSAGES = require("../constants/messages");
 
 const bcrypt = require('bcrypt');
 
+// Hide Password
+const sanitizeUser = (user)=>{
+    user = user.toObject ? user.toObject() : {...user};
+    delete user["userPwd"];
+    return user;
+}
+
+// Add a user
 const adminAddUser = async (req, res)=>{
 
     try{
@@ -54,11 +62,16 @@ const adminAddUser = async (req, res)=>{
     }
 };
 
+// Show all users
 const adminShowUsers = async(req, res, next)=>{
     try
     {
+        // const allUsers = await UserModel.find({}, {userPwd:0});
+        // const allUsers = await UserModel.find().select("userName userEmail");
+        // const allUsers = await UserModel.find().select("-userPwd");
         const allUsers = await UserModel.find();
-        return sendSuccess(res, STATUS_CODES.OK, MESSAGES.USER.FETCHED_ALL, allUsers);
+        // return sendSuccess(res, STATUS_CODES.OK, MESSAGES.USER.FETCHED_ALL, sanitizeUser(allUsers));
+        return sendSuccess(res, STATUS_CODES.OK, MESSAGES.USER.FETCHED_ALL, allUsers.map(sanitizeUser));
     }
     catch(err)
     {
@@ -66,4 +79,60 @@ const adminShowUsers = async(req, res, next)=>{
     }
 }
 
-module.exports = {adminDefault, adminHome, adminAbout, adminGetUser, adminAddUser, adminShowUsers}
+// Find User by ID
+const adminFindUser = async (req, res, next) => {
+    try
+    {
+        const user = await UserModel.findById(req.params.id);
+        if(!user)
+            return sendError(res, STATUS_CODES.NOT_FOUND, MESSAGES.USER.NOT_FOUND)
+        return sendSuccess(res, STATUS_CODES.OK, MESSAGES.USER.FETCHED, sanitizeUser(user));
+    }
+    catch(error){
+        next(err);
+    }
+};
+
+// Delete User By ID
+const adminDeleteUser = async(req, res, next) => {
+    try
+    {
+        const user = await UserModel.findByIdAndDelete(req.params.id);
+        if(!user)
+            return sendError(res, STATUS_CODES.NOT_FOUND, MESSAGES.USER.NOT_FOUND)
+        return sendSuccess(res, STATUS_CODES.OK, MESSAGES.USER.DELETED);
+    }
+    catch(err)
+    {
+        next(err);
+    }
+}
+
+// Update User Details
+const adminUpdateUser = async(req, res, next) => {
+    try
+    {
+        const { emailId } = req.body ;
+        if(!emailId)
+        return sendError(res, STATUS_CODES.BAD_REQUEST, MESSAGES.AUTH.MISSING_VALUES);
+        const user = await UserModel.findByIdAndUpdate(
+            req.params.id,
+            {
+                userEmail: emailId
+            },
+            {
+                new: true,
+                runValidators: true,
+            }
+        );
+        if(!user)
+            return sendError(res, STATUS_CODES.NOT_FOUND, MESSAGES.USER.NOT_FOUND);
+        return sendSuccess(res, STATUS_CODES.OK, MESSAGES.USER.UPDATED, sanitizeUser(user));
+    }
+    catch(err)
+    {
+        next(err);
+    }
+}
+
+module.exports = {adminDefault, adminHome, adminAbout, adminGetUser, adminAddUser, adminShowUsers, adminFindUser, adminDeleteUser, adminUpdateUser}
