@@ -10,6 +10,13 @@ const PORT = process.env.PORT || 8000;
 
 app.use(express.json());
 
+// Hide Password
+const sanitizeUser = (user)=>{
+    user = user.toObject ? user.toObject() : {...user};
+    delete user["userPwd"];
+    return user;
+}
+
 // ---------- Middleware 1 (Application level middleware) ----------
 const middleware1 =(req, res, next) => {
     console.log("Middleware 1 Calling....");
@@ -26,6 +33,32 @@ const middleware2 =(req, res, next) => {
 }
 
 app.use(middleware1, middleware2);
+
+const bcrypt = require('bcrypt');
+
+// Login
+app.post("/login", async(req, res, next) => {
+    try
+    {
+        const { emailId, pwd } = req.body;
+        if(!pwd || !emailId)
+            return sendError(res, STATUS_CODES.BAD_REQUEST, MESSAGES.AUTH.MISSING_VALUES);
+        const user = await UserModel.findOne({userEmail : emailId});
+        if(!user)
+            return sendError(res, STATUS_CODES.NOT_FOUND, MESSAGES.USER.NOT_FOUND);
+        const isMatched = await bcrypt.compare(pwd, user.userPwd);
+        
+        if(!isMatched)
+            return sendError(res, STATUS_CODES.UNAUTHORIZED, MESSAGES.AUTH.INVALID_CREDENTIALS);
+        // JWT Token
+        // HTTP Cookie
+        return sendSuccess(res, STATUS_CODES.OK, MESSAGES.AUTH.LOGIN_SUCCESS, sanitizeUser(user));
+    }
+    catch(err)
+    {
+        next(err);
+    }
+})
 
 const adminRoutes = require('./routes/adminRoutes');
 // http://localhost:8000/admin
@@ -72,4 +105,8 @@ app.listen(PORT, HOST, (error)=>{
 
 // ------------ Error Handling Middleware (used at last)---------------
 const errorHandler = require("./middlewares/errorMiddleware");
+const UserModel = require("./models/userModel");
+const { sendError, sendSuccess } = require("./utils/responseHelpers");
+const STATUS_CODES = require("./constants/statusCodes");
+const MESSAGES = require("./constants/messages");
 app.use(errorHandler);
