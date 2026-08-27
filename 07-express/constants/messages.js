@@ -9,8 +9,8 @@ const MESSAGES = {
     CREATED: "User Created Successfully",
     FETCHED: "User fetched Successfully",
     FETCHED_ALL: "All Users fetched Successfully",
-    UPDATE: "Users Updated Successfully",
-    DELETE: "Users Deleted Successfully",
+    UPDATED: "Users Updated Successfully",
+    DELETED: "Users Deleted Successfully",
     NOT_FOUND: "User not found",
   },
   COMMON: {
