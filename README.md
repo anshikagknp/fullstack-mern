@@ -12,20 +12,21 @@ A collection of lecture demos, notes, and practice exercises from a Fullstack ME
 
 ## Repository Structure
 
-| Folder | Topic |
-|---|---|
-| `01-html` | HTML Basics |
-| `02-css` | CSS |
-| `03-bootstrap` | Bootstrap |
-| `04-mongodb` | MongoDB |
-| `05-javascript` | JavaScript |
-| `05-javascript/23-dom` | DOM Manipulation |
-| `05-javascript/24-async` | Asynchronous JavaScript |
-| `06-react` | React (Vite) |
-| `07-express` | Express.js |
-| `assignments` | Practice |
-| `images` | Assets |
-| `multimedia` | Assets |
+| Folder | Topic                    |
+|---|--------------------------|
+| `01-html` | HTML Basics              |
+| `02-css` | CSS                      |
+| `03-bootstrap` | Bootstrap                |
+| `04-mongodb` | MongoDB                  |
+| `05-javascript` | JavaScript               |
+| `05-javascript/23-dom` | DOM Manipulation         |
+| `05-javascript/24-async` | Asynchronous JavaScript  |
+| `06-react` | React (Vite)             |
+| `07-express` | Express.js               |
+| `assignments` | Practice                 |
+| `reference-notes` | Complete Notes Topicwise |
+| `images` | Assets                   |
+| `multimedia` | Assets                   |
 
 ## Folder Contents
 
@@ -152,7 +153,7 @@ A collection of lecture demos, notes, and practice exercises from a Fullstack ME
 
 ### [`06-react`](06-react/myFirstApp) — React (Vite)
 
-A single Vite app (`myFirstApp`) with one topic per file in `src/`. Only one component is rendered at a time from `App.jsx` — comment/uncomment to switch between demos. See the [app's own README](06-react/myFirstApp/README.md) for full setup instructions.
+A single Vite app (`myFirstApp`) with one topic per file in `src/`. Only one component is rendered at a time from `App.jsx` — comment/uncomment to switch between demos.
 
 - [01-BasicHeading.jsx](06-react/myFirstApp/src/01-BasicHeading.jsx)
 - [02-FragmentDemo.jsx](06-react/myFirstApp/src/02-FragmentDemo.jsx)
@@ -174,17 +175,58 @@ A single Vite app (`myFirstApp`) with one topic per file in `src/`. Only one com
 - [18-ContextDemo.jsx](06-react/myFirstApp/src/18-ContextDemo.jsx)
 - [Contexts/AppContext.jsx](06-react/myFirstApp/src/Contexts/AppContext.jsx)
 
+A small full-stack demo app (auth + user management) built on top of the numbered topic files, wired up via `App.jsx`/`main.jsx`:
+
+- [main.jsx](06-react/myFirstApp/src/main.jsx) — App entry point
+- [App.jsx](06-react/myFirstApp/src/App.jsx) — Route definitions
+- [api.js](06-react/myFirstApp/src/api.js) — Axios instance (`baseURL`, `withCredentials`)
+- [App.css](06-react/myFirstApp/src/App.css) / [index.css](06-react/myFirstApp/src/index.css) — Global styles
+- [Contexts/AuthContext.jsx](06-react/myFirstApp/src/Contexts/AuthContext.jsx) — Auth state provider (current user, loading state)
+- [Contexts/ProtectedRoutes.jsx](06-react/myFirstApp/src/Contexts/ProtectedRoutes.jsx) — Role-based route guard
+- [components/MyNav.jsx](06-react/myFirstApp/src/components/MyNav.jsx) — Navbar with logout
+- [pages/Login.jsx](06-react/myFirstApp/src/pages/Login.jsx) — Login form
+- [pages/AddUser.jsx](06-react/myFirstApp/src/pages/AddUser.jsx) — Create-user form
+- [pages/EditUser.jsx](06-react/myFirstApp/src/pages/EditUser.jsx) — Edit-user form
+- [pages/ShowUsers.jsx](06-react/myFirstApp/src/pages/ShowUsers.jsx) — User list with delete
+- [pages/AdminDashboard.jsx](06-react/myFirstApp/src/pages/AdminDashboard.jsx) — Admin layout (`Outlet`)
+- [pages/UserDashboard.jsx](06-react/myFirstApp/src/pages/UserDashboard.jsx) — User landing page
+- `public/` — Static assets (avatar, favicon, icons)
+- `assets/` — Imported image assets (`hero.png`, `react.svg`, `vite.svg`)
+- `vite.config.js`, `eslint.config.js`, `index.html` — Vite/ESLint/HTML boilerplate
+
 ### [`07-express`](07-express) — Express.js
 
-A small Express server demonstrating routing, controllers, and JSON responses.
+A small Express server demonstrating routing, controllers, JSON responses, and a small auth + file-upload backend.
 
 - [index.js](07-express/index.js) — Server entry point; mounts routes and defines a few standalone handlers
+- [db_conn.js](07-express/db_conn.js) — Mongoose connection setup (`MONGO_URI`)
+- [seed.js](07-express/seed.js) — One-off script to seed an admin user into the database
 - [routes/adminRoutes.js](07-express/routes/adminRoutes.js) — Admin route definitions (`/admin/...`)
 - [routes/userRoutes.js](07-express/routes/userRoutes.js) — User route definitions (`/user/...`)
 - [controllers/adminControllers.js](07-express/controllers/adminControllers.js) — Admin route handler logic
 - [controllers/userControllers.js](07-express/controllers/userControllers.js) — User route handler logic
+- [controllers/uploadProfilePicController.js](07-express/controllers/uploadProfilePicController.js) — Handles profile-picture upload requests
+- [models/userModel.js](07-express/models/userModel.js) — Mongoose schema for users
+- [middlewares/AuthMiddleware.js](07-express/middlewares/AuthMiddleware.js) — JWT authentication middleware
+- [middlewares/AuthorizeMiddleware.js](07-express/middlewares/AuthorizeMiddleware.js) — Role-based authorization middleware
+- [middlewares/errorMiddleware.js](07-express/middlewares/errorMiddleware.js) — Centralized error handler
+- [middlewares/uploadProfilePic.js](07-express/middlewares/uploadProfilePic.js) — Multer disk-storage config for profile pictures
+- [constants/messages.js](07-express/constants/messages.js) — Centralized response message strings
+- [constants/statusCodes.js](07-express/constants/statusCodes.js) — Centralized HTTP status codes
+- [utils/responseHelpers.js](07-express/utils/responseHelpers.js) — `sendSuccess`/`sendError` response helpers
+- `uploads/profilePic/` — Upload destination for profile pictures (`.gitkeep` only; contents not committed)
 - `.env` — Local environment config (`HOST`, `PORT`, `MONGO_URI`, `MONGO_UID`) — not committed to git
 - `Demo1.js` — Scratch file for testing `process.env` values — not committed to git
+
+### [`reference-notes`](Reference-notes) — Topic-wise Notes
+
+- [HTML-Complete-Notes.md](reference-notes/HTML-Complete-Notes.md)
+- [CSS-Complete-Notes.md](reference-notes/CSS-Complete-Notes.md)
+- [Bootstrap-Complete-Notes.md](reference-notes/Bootstrap-Complete-Notes.md)
+- [MongoDB-Complete-Notes.md](reference-notes/MongoDB-Complete-Notes.md)
+- [JS-Complete-Notes.md](reference-notes/JS-Complete-Notes.md)
+- [React-Complete-Notes.md](reference-notes/React-Complete-Notes.md)
+- [Express-Complete-Notes.md](reference-notes/Express-Complete-Notes.md)
 
 ### [`assignments`](assignments) — Practice
 
