@@ -18,6 +18,14 @@ import Comp17 from './17-PropsDrilling.jsx'
 import Comp18 from './18-ContextDemo.jsx'
 // import './App.css'
 
+import { Navigate, Route, Routes } from 'react-router-dom'
+import Login from './pages/Login'
+import AdminDashBoard from './pages/AdminDashboard'
+import ShowUsers from './pages/ShowUsers'
+import AddUser from './pages/AddUser'
+import EditUser from './pages/EditUser'
+import ProtectedRoutes from './Contexts/ProtectedRoutes'
+
 function App() {
  
 
@@ -38,9 +46,42 @@ function App() {
       {/* <Comp6/> */}
       {/* <Comp4/> */}
       {/* <Comp5/> */}
-      <Comp1/>
+      {/* <Comp1/> */}
       {/* <Comp2/> */}
       {/* <Comp3/> */}
+
+      {/* 19) Login + Admin Dashboard (routing, auth context, protected routes, axios) */}
+      <Routes>
+        <Route path="/" element={<Navigate to="/login" replace />} />
+        <Route path="/login" element={<Login />} />
+
+        <Route
+          path="/admin"
+          element={
+            <ProtectedRoutes role="admin">
+              <AdminDashBoard />
+            </ProtectedRoutes>
+          }
+        >
+          <Route path="show" element={<ShowUsers />} />
+          <Route path="addUser" element={<AddUser />} />
+          <Route path="edit/:id" element={<EditUser />} />
+        </Route>
+
+        {/* For user Routes */}
+        {/* <Route
+          path="/admin"
+          element={
+            <ProtectedRoutes role="user">
+              <UserDashBoard />
+            </ProtectedRoutes>
+          }
+        >
+          <Route path="show" element={<ShowUsers />} />
+          <Route path="addUser" element={<AddUser />} />
+          <Route path="edit/:id" element={<EditUser />} />
+        </Route> */}
+      </Routes>
     </>
   )
 }
