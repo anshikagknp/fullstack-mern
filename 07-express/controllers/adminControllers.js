@@ -37,20 +37,20 @@ const sanitizeUser = (user)=>{
 }
 
 // Add a user
-const adminAddUser = async (req, res)=>{
+const adminAddUser = async (req, res, next)=>{  // Fixed: added `next` parameter
 
     try{
-        const { unm, pwd, emailId } = req.body ;
+        const { unm, pwd, mailId } = req.body ;
+
+        if(!unm || !pwd || !mailId)
+        return sendError(res, STATUS_CODES.BAD_REQUEST, MESSAGES.AUTH.MISSING_VALUES);
 
         const hashedPwd = await bcrypt.hash(pwd, 10);
-
-        if(!unm || !pwd || !emailId)
-        return sendError(res, STATUS_CODES.BAD_REQUEST, MESSAGES.AUTH.MISSING_VALUES);
 
         let newUser = new UserModel({
             userName: unm,
             userPwd: hashedPwd,
-            userEmail: emailId
+            userEmail: mailId
         });
         newUser = await newUser.save();
         return sendSuccess(res, STATUS_CODES.CREATED, MESSAGES.USER.CREATED, newUser);
@@ -88,8 +88,8 @@ const adminFindUser = async (req, res, next) => {
             return sendError(res, STATUS_CODES.NOT_FOUND, MESSAGES.USER.NOT_FOUND)
         return sendSuccess(res, STATUS_CODES.OK, MESSAGES.USER.FETCHED, sanitizeUser(user));
     }
-    catch(error){
-        next(err);
+    catch(error){       // Fixed: was calling `next(err)` but bound variable is `error`
+        next(error);
     }
 };
 
@@ -112,13 +112,13 @@ const adminDeleteUser = async(req, res, next) => {
 const adminUpdateUser = async(req, res, next) => {
     try
     {
-        const { emailId } = req.body ;
-        if(!emailId)
+        const { mailId } = req.body ;
+        if(!mailId)
         return sendError(res, STATUS_CODES.BAD_REQUEST, MESSAGES.AUTH.MISSING_VALUES);
         const user = await UserModel.findByIdAndUpdate(
             req.params.id,
             {
-                userEmail: emailId
+                userEmail: mailId
             },
             {
                 new: true,
