@@ -35,4 +35,11 @@ router.delete("/user/:id", adminDeleteUser)
 
 router.put("/user/:id", adminUpdateUser)
 
+const uploadProfilePic = require("../middlewares/uploadProfilePic");
+const uploadProfilePicController = require("../controllers/uploadProfilePicController");
+
+// http://localhost:8000/admin/profileUpload
+// profilePicCtrl - Name of fileupload Control in frontend form
+router.post("/profileUpload", uploadProfilePic.single("profilePicCtrl"), uploadProfilePicController);
+
 module.exports = router;
