@@ -5,7 +5,8 @@ const userSchema = new mongoose.Schema({
     userEmail: {type:String, required:true, unique:true},
     isActive: {type:Boolean, required:true, default:true},
     createdAt: {type:Date, required:true, default:Date.now},
-    role: {type:String, enum:["admin","user"], required:true, default:"user"}
+    userRole: {type:String, enum:["admin","user"], required:true, default:"user"},
+    profilePic: {type:String}
 })
 
 const UserModel = mongoose.model("AppUsers", userSchema)
