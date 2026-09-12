@@ -71,7 +71,7 @@ app.post("/login", async(req, res, next) => {
         // JWT Token
         const token = JWT.sign(
             {
-                id: user._id,
+                id: user.id,
                 role: user.userRole
             },
             process.env.JWT_SECRET_KEY,
