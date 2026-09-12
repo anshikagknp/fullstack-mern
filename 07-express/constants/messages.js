@@ -4,6 +4,7 @@ const MESSAGES = {
     INVALID_CREDENTIALS: "Invalid UserID(Email) and Password",
     LOGIN_SUCCESS: "Login Successful",
     LOG_OUT: "Logout Successful",
+    UNAUTHORIZED: "Unauthorized Access",
   },
   USER: {
     CREATED: "User Created Successfully",
@@ -17,6 +18,7 @@ const MESSAGES = {
     INTERNAL_ERROR: "Something went wrong, please try again later",
     GENERAL: "Success",
     ERROR: "Error",
+    UPLOAD_ERROR: "File not Present",
   },
 };
 
